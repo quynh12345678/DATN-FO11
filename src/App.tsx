@@ -6,6 +6,7 @@ import ClientLayout from "./layouts/clientLayout";
 import "/src/assets/css/style.css";
 import Products from "./compotion/product";
 import SingleProduct from "./compotion/singleProduct";
+import NotFound from "./compotion/notFound";
 
 const routerConfig = [
   {
@@ -23,6 +24,10 @@ const routerConfig = [
       {
         path: "detailProduct",
         element: <SingleProduct />,
+      },
+      {
+        path: "/*",
+        element: <NotFound />,
       },
     ],
   },
