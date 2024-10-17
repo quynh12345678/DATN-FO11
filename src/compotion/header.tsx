@@ -80,7 +80,7 @@ const Header = () => {
                   <a
                     className="link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
                     aria-current="page"
-                    href="/product"
+                    href="/products"
                   >
                     Products
                   </a>
