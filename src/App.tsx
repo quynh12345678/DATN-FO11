@@ -8,6 +8,8 @@ import Pay from "./pages/Website/home/pay";
 import Bill from "./pages/Website/home/bill";
 import DetailBill from "./pages/Website/home/detailBill";
 import Products from "./compotion/product";
+import Login from "./compotion/login";
+import Register from "./compotion/register";
 
 const routerConfig = [
   {
@@ -33,6 +35,14 @@ const routerConfig = [
       {
         path: "/products",
         element: <Products />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
     ],
   },
