@@ -4,6 +4,8 @@ import Home from "./compotion/home";
 import "react-toastify/dist/ReactToastify.css";
 import ClientLayout from "./layouts/clientLayout";
 import "/src/assets/css/style.css";
+import Login from "./compotion/login";
+import Register from "./compotion/register";
 
 const routerConfig = [
   {
@@ -13,6 +15,14 @@ const routerConfig = [
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
     ],
   },
