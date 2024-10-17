@@ -11,6 +11,7 @@ import Products from "./compotion/product";
 import Login from "./compotion/login";
 import Register from "./compotion/register";
 import SingleProduct from "./compotion/singleProduct";
+import NotFound from "./compotion/notFound";
 
 const routerConfig = [
   {
@@ -48,6 +49,10 @@ const routerConfig = [
       {
         path: "detailProduct",
         element: <SingleProduct />,
+      },
+      {
+        path: "/*",
+        element: <NotFound />,
       },
     ],
   },
