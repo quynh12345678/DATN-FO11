@@ -4,6 +4,7 @@ import Home from "./compotion/home";
 import "react-toastify/dist/ReactToastify.css";
 import ClientLayout from "./layouts/clientLayout";
 import "/src/assets/css/style.css";
+import Products from "./compotion/product";
 
 const routerConfig = [
   {
@@ -13,6 +14,10 @@ const routerConfig = [
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/products",
+        element: <Products />,
       },
     ],
   },
