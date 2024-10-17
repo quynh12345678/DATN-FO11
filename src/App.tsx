@@ -12,6 +12,10 @@ import Login from "./compotion/login";
 import Register from "./compotion/register";
 import SingleProduct from "./compotion/singleProduct";
 import NotFound from "./compotion/notFound";
+import AdminLayout from "./layouts/adminLayout";
+import HomeAdmin from "./compotion/admin/homeAdmin";
+import Listproduct from "./compotion/admin/listproduct";
+import AddProduct from "./compotion/admin/addProduct";
 
 const routerConfig = [
   {
@@ -53,6 +57,42 @@ const routerConfig = [
       {
         path: "/*",
         element: <NotFound />,
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: <AdminLayout />,
+    children: [
+      {
+        path: "/admin",
+        element: <HomeAdmin />,
+      },
+      {
+        path: "/admin/list",
+        element: <Listproduct />,
+      },
+      {
+        path: "/admin/add",
+        element: <AddProduct />,
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: <AdminLayout />,
+    children: [
+      {
+        path: "/admin",
+        element: <HomeAdmin />,
+      },
+      {
+        path: "/admin/list",
+        element: <Listproduct />,
+      },
+      {
+        path: "/admin/add",
+        element: <AddProduct />,
       },
     ],
   },
