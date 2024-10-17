@@ -7,6 +7,10 @@ import "/src/assets/css/style.css";
 import Pay from "./pages/Website/home/pay";
 import Bill from "./pages/Website/home/bill";
 import DetailBill from "./pages/Website/home/detailBill";
+import AdminLayout from "./layouts/adminLayout";
+import HomeAdmin from "./compotion/admin/homeAdmin";
+import Listproduct from "./compotion/admin/listproduct";
+import AddProduct from "./compotion/admin/addProduct";
 
 const routerConfig = [
   {
@@ -30,6 +34,26 @@ const routerConfig = [
         element: <DetailBill />,
       },
     ],
+  },
+  {
+    path: "/",
+    element: <AdminLayout />,
+    children: [
+      
+        {
+          path: "/admin",
+          element: <HomeAdmin />,
+        },
+        {
+          path: "/admin/list",
+          element: <Listproduct />,
+        },
+        {
+          path: "/admin/add",
+          element: <AddProduct />,
+        },
+      
+    ]
   },
 ];
 
