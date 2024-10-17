@@ -10,6 +10,7 @@ import DetailBill from "./pages/Website/home/detailBill";
 import Products from "./compotion/product";
 import Login from "./compotion/login";
 import Register from "./compotion/register";
+import SingleProduct from "./compotion/singleProduct";
 
 const routerConfig = [
   {
@@ -43,6 +44,10 @@ const routerConfig = [
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "detailProduct",
+        element: <SingleProduct />,
       },
     ],
   },
