@@ -7,6 +7,11 @@ import "/src/assets/css/style.css";
 import Pay from "./pages/Website/home/pay";
 import Bill from "./pages/Website/home/bill";
 import DetailBill from "./pages/Website/home/detailBill";
+import Products from "./compotion/product";
+import Login from "./compotion/login";
+import Register from "./compotion/register";
+import SingleProduct from "./compotion/singleProduct";
+import NotFound from "./compotion/notFound";
 import AdminLayout from "./layouts/adminLayout";
 import HomeAdmin from "./compotion/admin/homeAdmin";
 import Listproduct from "./compotion/admin/listproduct";
@@ -33,27 +38,63 @@ const routerConfig = [
         path: "/detailbill",
         element: <DetailBill />,
       },
+      {
+        path: "/products",
+        element: <Products />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+      {
+        path: "detailProduct",
+        element: <SingleProduct />,
+      },
+      {
+        path: "/*",
+        element: <NotFound />,
+      },
     ],
   },
   {
     path: "/",
     element: <AdminLayout />,
     children: [
-      
-        {
-          path: "/admin",
-          element: <HomeAdmin />,
-        },
-        {
-          path: "/admin/list",
-          element: <Listproduct />,
-        },
-        {
-          path: "/admin/add",
-          element: <AddProduct />,
-        },
-      
-    ]
+      {
+        path: "/admin",
+        element: <HomeAdmin />,
+      },
+      {
+        path: "/admin/list",
+        element: <Listproduct />,
+      },
+      {
+        path: "/admin/add",
+        element: <AddProduct />,
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: <AdminLayout />,
+    children: [
+      {
+        path: "/admin",
+        element: <HomeAdmin />,
+      },
+      {
+        path: "/admin/list",
+        element: <Listproduct />,
+      },
+      {
+        path: "/admin/add",
+        element: <AddProduct />,
+      },
+    ],
   },
 ];
 
