@@ -7,6 +7,7 @@ import "/src/assets/css/style.css";
 import Pay from "./pages/Website/home/pay";
 import Bill from "./pages/Website/home/bill";
 import DetailBill from "./pages/Website/home/detailBill";
+import Products from "./compotion/product";
 
 const routerConfig = [
   {
@@ -28,6 +29,10 @@ const routerConfig = [
       {
         path: "/detailbill",
         element: <DetailBill />,
+      },
+      {
+        path: "/products",
+        element: <Products />,
       },
     ],
   },
