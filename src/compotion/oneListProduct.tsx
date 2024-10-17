@@ -79,7 +79,7 @@ const OneListProduct = () => {
                     <div className="btn-group">
                       <a
                         className="btn btn-sm btn-outline-secondary"
-                        href="/single"
+                        href="/detailProduct"
                       >
                         Xem chi tiết
                       </a>
