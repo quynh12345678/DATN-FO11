@@ -16,6 +16,7 @@ import AdminLayout from "./layouts/adminLayout";
 import HomeAdmin from "./compotion/admin/homeAdmin";
 import Listproduct from "./compotion/admin/listproduct";
 import AddProduct from "./compotion/admin/addProduct";
+import ListUser from "./compotion/admin/listUser";
 
 const routerConfig = [
   {
@@ -75,6 +76,10 @@ const routerConfig = [
       {
         path: "/admin/add",
         element: <AddProduct />,
+      },
+      {
+        path: "/admin/user",
+        element: <ListUser />,
       },
     ],
   },
