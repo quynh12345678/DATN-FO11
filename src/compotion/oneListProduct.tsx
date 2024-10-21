@@ -42,7 +42,7 @@ const OneListProduct = () => {
                     </div>
                   </div>
                 </div>
-                <a href="product-detail.html">
+                <a href="/detailProduct">
                   <img
                     src="https://footdealer.co/wp-content/uploads/2023/06/Maillot-Manchester-United-Domicile-2023-2024-1.jpg"
                     width="100%"
@@ -52,7 +52,7 @@ const OneListProduct = () => {
                   />
                 </a>
                 <div className="card-body">
-                  <a href="product-detail.html">
+                  <a href="/detailProduct">
                     <h5>Áo Quỷ đỏ</h5>
                   </a>
                   <h6>MU</h6>

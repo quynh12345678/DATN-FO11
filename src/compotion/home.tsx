@@ -1,4 +1,3 @@
-
 import Banner from "./baner";
 import Menu from "./menu";
 // import BanerBody from './banerBody'
