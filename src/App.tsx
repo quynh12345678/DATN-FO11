@@ -22,6 +22,7 @@ import { Product } from "./interface/product";
 import { getAllProduct } from "./sevies/product";
 import Header from "./compotion/header";
 import Footer from "./compotion/footer";
+import Cart from "./compotion/giohang";
 
 function App() {
   const [listproduct, setlistProduct] = useState<Product[]>([]);
@@ -54,6 +55,7 @@ function App() {
         <Route path="/admin/list" Component={Listproduct} />
         <Route path="/admin/add" Component={AddProduct} />
         <Route path="/admin/user" Component={ListUser} />
+        <Route path="/giohang" Component={Cart} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

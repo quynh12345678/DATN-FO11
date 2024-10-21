@@ -214,7 +214,7 @@ const SingleProduct = () => {
                           </div>
                           <a
                             className="btn btn-danger m-0 d-block mx-5 px-4 py-3"
-                            href="/pay"
+                            href="/giohang"
                           >
                             Add to Cart
                           </a>

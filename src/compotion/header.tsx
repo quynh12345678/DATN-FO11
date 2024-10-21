@@ -132,9 +132,9 @@ const Header = () => {
                     <div className="menu-options">
                       <div className="menu-item">
                         <span role="img" aria-label="ticket">
-                          🛍️
+                           🛍️
                         </span>{" "}
-                        Gio hang
+                       <a href="/giohang" style={{textDecoration:"none"}}>Giỏ hàng</a>
                       </div>
                       <div className="menu-item">
                         <span role="img" aria-label="offer">

@@ -49,7 +49,7 @@ const LoadListProduct = (props: Props) => {
                                   <i className="btn bi bi-eye fs-6 "></i>
                                 </a>
 
-                                <a href="">
+                                <a href="/giohang">
                                   <i className="btn bi bi-cart2"></i>
                                 </a>
                               </div>
