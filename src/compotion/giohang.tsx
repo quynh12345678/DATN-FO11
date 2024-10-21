@@ -1,15 +1,10 @@
 import "../assets/css/giohang.css";
-import { useState } from "react";
 
-
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 const Cart = () => {
   return (
     <>
-   
-      <h2 className="text-center">
-       Giỏ Hàng
-      </h2>
+      <h2 className="text-center">Giỏ Hàng</h2>
       <div className="container">
         <table id="cart" className="table table-hover table-condensed">
           <thead>
@@ -36,14 +31,12 @@ const Cart = () => {
                       width="100"
                     />
                   </div>
-                  
                 </div>
               </td>
               <td>
-<div className="col-sm-10">
-                    <h4 className="nomargin">Sản phẩm 1</h4>
-                   
-                  </div>
+                <div className="col-sm-10">
+                  <h4 className="nomargin">Sản phẩm 1</h4>
+                </div>
               </td>
               <td data-th="Price">200.000 đ</td>
               <td data-th="Quantity">
@@ -58,15 +51,15 @@ const Cart = () => {
               </td>
               <td className="actions" data-th="">
                 <button className="btn btn-info btn-sm">
-                <i className="bi bi-credit-card">Sửa</i>
+                  <i className="bi bi-credit-card">Sửa</i>
                 </button>
                 <button className="btn btn-danger btn-sm">
-                <i className="bi bi-trash">Xoá</i>
+                  <i className="bi bi-trash">Xoá</i>
                 </button>
               </td>
             </tr>
             <tr>
-            <td data-th="Product">
+              <td data-th="Product">
                 <div className="row">
                   <div className="col-sm-2 hidden-xs">
                     <img
@@ -76,16 +69,14 @@ const Cart = () => {
                       width="100"
                     />
                   </div>
-                  
                 </div>
               </td>
               <td>
-<div className="col-sm-10">
-                    <h4 className="nomargin">Sản phẩm 2</h4>
-                   
-                  </div>
+                <div className="col-sm-10">
+                  <h4 className="nomargin">Sản phẩm 2</h4>
+                </div>
               </td>
-<td data-th="Price">300.000 đ</td>
+              <td data-th="Price">300.000 đ</td>
               <td data-th="Quantity">
                 <input
                   className="form-control text-center"
@@ -98,19 +89,18 @@ const Cart = () => {
               </td>
               <td className="actions" data-th="">
                 <button className="btn btn-info btn-sm">
-                <i className="bi bi-credit-card">Sửa</i>
+                  <i className="bi bi-credit-card">Sửa</i>
                 </button>
                 <button className="btn btn-danger btn-sm">
-                <i className="bi bi-trash">Xoá</i>
+                  <i className="bi bi-trash">Xoá</i>
                 </button>
               </td>
             </tr>
           </tbody>
           <tfoot>
-           
             <tr>
               <td>
-                <a href="http://hocwebgiare.com/" className="btn btn-warning">
+                <a href="/products" className="btn btn-warning">
                   <i className="fa fa-angle-left"></i> Tiếp tục mua hàng
                 </a>
               </td>
@@ -119,10 +109,7 @@ const Cart = () => {
                 <strong>Tổng tiền 500.000 đ</strong>
               </td>
               <td>
-                <a
-                  href="/pay"
-                  className="btn btn-success btn-block"
-                >
+                <a href="/pay" className="btn btn-success btn-block">
                   Thanh toán <i className="fa fa-angle-right"></i>
                 </a>
               </td>
@@ -130,10 +117,9 @@ const Cart = () => {
           </tfoot>
         </table>
       </div>
-      <ToastContainer/>
-     
+      <ToastContainer />
     </>
   );
 };
 
-export default Cart; 
+export default Cart;
