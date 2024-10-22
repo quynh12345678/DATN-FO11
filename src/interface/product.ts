@@ -1,5 +1,5 @@
 export interface Product {
-  id_san_pham: string;
+  id: string;
   name: string;
   images: string;
   price: number;

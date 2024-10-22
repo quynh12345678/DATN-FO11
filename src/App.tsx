@@ -47,7 +47,12 @@ function App() {
         <Route path="/products" Component={Products} />
         <Route path="/login" Component={Login} />
         <Route path="/register" Component={Register} />
-        <Route path="/detailProduct" Component={SingleProduct} />
+        <Route
+          path="/detailProduct/:id"
+          element={
+            <SingleProduct product={listproduct} setProduct={setlistProduct} />
+          }
+        />
         <Route path="/pay" Component={Pay} />
         <Route path="/bill" Component={Bill} />
         <Route path="/detailbill" Component={DetailBill} />

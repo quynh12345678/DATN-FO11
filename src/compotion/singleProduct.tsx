@@ -12,8 +12,37 @@ import "/src/assets/css/pe-icon-7-stroke.css";
 import "/src/assets/css/aos.min.css";
 import "/src/assets/js/custom.js";
 import "/src/assets/css/style.css";
+import { Product, ProductLite } from "../interface/product";
+import { useEffect, useState } from "react";
+import { getIdProduct } from "../sevies/product";
+import { useParams } from "react-router-dom";
 
-const SingleProduct = () => {
+type Props = {
+  product: Product[];
+  setProduct: (data: Product[]) => void;
+};
+const SingleProduct = (props: Props) => {
+  const [name, setName] = useState<string>("");
+  const [images, setImage] = useState<string>("");
+  const [price, setPrice] = useState<number>(0);
+  const [description, setDesc] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+  const { id }: any = useParams();
+  const firstFourProducts = props.product.slice(0, 4);
+  useEffect(() => {
+    (async () => {
+      try {
+        const getIdPro: ProductLite = await getIdProduct(id);
+        setName(getIdPro.name);
+        setPrice(getIdPro.price);
+        setImage(getIdPro.images);
+        setDesc(getIdPro.description);
+        console.log(getIdPro);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
   return (
     <>
       <main>
@@ -34,6 +63,7 @@ const SingleProduct = () => {
                                 href=""
                               >
                                 <img
+                                  // src={images}
                                   src="https://footdealer.co/wp-content/uploads/2023/06/Maillot-Manchester-United-Domicile-2023-2024-1.jpg"
                                   width="570"
                                   height="541"
@@ -116,11 +146,11 @@ const SingleProduct = () => {
                     <div className="col-xl-6">
                       <div className="product-single-info">
                         <h3 className="main-title" style={{ marginTop: 20 }}>
-                          Ao Man u
+                          {name}
                         </h3>
                         <div className="prices">
                           <span className="price" color="#red">
-                            $111111
+                            {price}
                           </span>
                         </div>
                         <div className="rating-box-wrap">
@@ -138,7 +168,7 @@ const SingleProduct = () => {
                         <p></p>
                         <div className="group-product-list">
                           <span className="info-text">
-                            Buy this bundle and get off to{" "}
+                            {description}
                             <span className="text-danger">25%</span> of all
                             prices.
                           </span>
@@ -256,75 +286,91 @@ const SingleProduct = () => {
           <div className="container mb-5 ">
             <hr className="mb-5" />
             <div className="tile">
-              <button className="btn btn-danger"></button>{" "}
-              <a className="btn text-danger fw-medium" href="">
-                Mục Liên Quan
-              </a>
               <div className="row">
-                {/* <div className="col-10">
-                  <h3 className="mt-3 ">Best Selling Products</h3>
-                </div> */}
-                {/* <div className="col-2 mb-4 "><a className="btn btn-danger py-3 px-5  " href="">View All</a></div> */}
+                <div className="col-10">
+                  <h3 className="mt-3 ">Mục Liên Quan</h3>
+                </div>
               </div>
             </div>
-            <div className="row">
-              <div className="col-sm-6 col-lg-3">
-                <div
-                  className="card px-5 py-3 bg-dark-subtle"
-                  style={{ width: "18rem", height: "14rem" }}
-                >
-                  <div className="position-absolute top-0 end-0 ">
-                    <div className="icon px-3">
-                      <div className="icon-heart rounded-circle bg-white my-3">
-                        <a href="">
-                          <i className="btn bi bi-heart fs-6 "></i>
-                        </a>
+            <div className="danhsachsanpham py-5 bg-light">
+              <div className="container">
+                <div className="row">
+                  {firstFourProducts.map((product: Product) => {
+                    return (
+                      <div
+                        className="col-md-4 position-relative"
+                        key={product.id}
+                      >
+                        <div className="card mb-4 shadow-sm">
+                          <div className=" hover-overlay position-absolute top-0 end-0 ">
+                            <div className="icon px-3">
+                              <div className="icon-heart rounded-circle bg-white my-3">
+                                <a href="">
+                                  <i className="btn bi bi-heart fs-6 "></i>
+                                </a>
+
+                                <a href="">
+                                  <i className="btn bi bi-eye fs-6 "></i>
+                                </a>
+
+                                <a href="/giohang">
+                                  <i className="btn bi bi-cart2"></i>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                          <a href={`/detailProduct/${product.id}`}>
+                            <img
+                              src="https://footdealer.co/wp-content/uploads/2023/06/Maillot-Manchester-United-Domicile-2023-2024-1.jpg"
+                              width="100%"
+                              height="350"
+                              alt=""
+                              className="card-img-top"
+                            />
+                          </a>
+                          <div className="card-body">
+                            <a href={`/detailProduct/${product.id}`}>
+                              <h5>{product.name}</h5>
+                            </a>
+                            <h6>MU</h6>
+                            <p className="card-text">{product.description}</p>
+                            <div className="start">
+                              <span>
+                                <i className="bi bi-star-fill text-warning"></i>
+                              </span>
+                              <span>
+                                <i className="bi bi-star-fill text-warning"></i>
+                              </span>
+                              <span>
+                                <i className="bi bi-star-fill text-warning"></i>
+                              </span>
+                              <span>
+                                <i className="bi bi-star-fill text-warning"></i>
+                              </span>
+                              <span>
+                                <i className="bi bi-star-fill text-warning"></i>
+                              </span>
+                              <samp>(65)</samp>
+                            </div>
+                            <div className="d-flex justify-content-between align-items-center">
+                              <div className="btn-group">
+                                <a
+                                  className="btn btn-sm btn-outline-secondary"
+                                  href={`/detailProduct/${product.id}`}
+                                >
+                                  Xem chi tiết
+                                </a>
+                              </div>
+                              <small className="text-muted text-right">
+                                <s>${product.price}</s>
+                                <b>${product.price}</b>
+                              </small>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div className="icon-heart rounded-circle bg-white">
-                        <a href="">
-                          <i className="btn bi bi-eye fs-6 "></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <a href={``}>
-                    <img
-                      src="src/images/anh7.jpg"
-                      className="card-img-top"
-                      style={{ width: "10rem" }}
-                      alt="Product"
-                    />
-                  </a>
-                </div>
-                <div className="card-body mt-3">
-                  <h5 className="card-title">áo anh 7</h5>
-                  <div className="prices my-3">
-                    <span className="price-old text-danger fw-medium">
-                      $100
-                    </span>
-                    <span className="sep">-</span>
-                    <span className="price text-decoration-line-through fw-medium">
-                      $9
-                    </span>
-                  </div>
-                </div>
-                <div className="start">
-                  <span>
-                    <i className="bi bi-star-fill text-warning"></i>
-                  </span>
-                  <span>
-                    <i className="bi bi-star-fill text-warning"></i>
-                  </span>
-                  <span>
-                    <i className="bi bi-star-fill text-warning"></i>
-                  </span>
-                  <span>
-                    <i className="bi bi-star-fill text-warning"></i>
-                  </span>
-                  <span>
-                    <i className="bi bi-star-fill text-warning"></i>
-                  </span>
-                  <samp>(65)</samp>
+                    );
+                  })}
                 </div>
               </div>
             </div>
