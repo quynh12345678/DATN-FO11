@@ -63,8 +63,7 @@ const SingleProduct = (props: Props) => {
                                 href=""
                               >
                                 <img
-                                  // src={images}
-                                  src="https://footdealer.co/wp-content/uploads/2023/06/Maillot-Manchester-United-Domicile-2023-2024-1.jpg"
+                                  src={images}
                                   width="570"
                                   height="541"
                                   alt="Image-HasTech"
