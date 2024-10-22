@@ -52,7 +52,7 @@ const OneListProduct = (props: Props) => {
                     </div>
                     <a href={`/detailProduct/${product.id}`}>
                       <img
-                        src="https://footdealer.co/wp-content/uploads/2023/06/Maillot-Manchester-United-Domicile-2023-2024-1.jpg"
+                        src={product.images}
                         width="100%"
                         height="350"
                         alt=""
@@ -64,7 +64,9 @@ const OneListProduct = (props: Props) => {
                         <h5>{product.name}</h5>
                       </a>
                       <h6>MU</h6>
-                      <p className="card-text">{product.description}</p>
+                      <p className="card-text" style={{ height: 100 }}>
+                        {product.description}
+                      </p>
                       <div className="start">
                         <span>
                           <i className="bi bi-star-fill text-warning"></i>
