@@ -3,7 +3,7 @@ import { ProductLite } from "../interface/product";
 
 export const getAllProduct = async () => {
   try {
-    const { data } = await axiosIinstance.get("/api/apiSanPham");
+    const { data } = await axiosIinstance.get("/api/products");
     console.log(data);
     return data.data;
   } catch (error) {
@@ -13,7 +13,7 @@ export const getAllProduct = async () => {
 export const getIdProduct = async (id: number) => {
   try {
     const { data } = await axiosIinstance.get("/api/products/" + id);
-    return data;
+    return data.data;
   } catch (error) {
     console.log(error);
   }

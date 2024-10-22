@@ -35,7 +35,7 @@ const LoadListProduct = (props: Props) => {
                     return (
                       <div
                         className="col-md-4 position-relative"
-                        key={product.id_san_pham}
+                        key={product.id}
                       >
                         <div className="card mb-4 shadow-sm">
                           <div className=" hover-overlay position-absolute top-0 end-0 ">
@@ -55,7 +55,7 @@ const LoadListProduct = (props: Props) => {
                               </div>
                             </div>
                           </div>
-                          <a href="/detailProduct">
+                          <a href={`/detailProduct/${product.id}`}>
                             <img
                               src="https://footdealer.co/wp-content/uploads/2023/06/Maillot-Manchester-United-Domicile-2023-2024-1.jpg"
                               width="100%"
@@ -65,11 +65,13 @@ const LoadListProduct = (props: Props) => {
                             />
                           </a>
                           <div className="card-body">
-                            <a href="/detailProduct">
+                            <a href={`/detailProduct/${product.id}`}>
                               <h5>{product.name}</h5>
                             </a>
                             <h6>MU</h6>
-                            <p className="card-text">{product.description}</p>
+                            <p className="card-text">
+                              Mô tả:{product.description}
+                            </p>
                             <div className="start">
                               <span>
                                 <i className="bi bi-star-fill text-warning"></i>
@@ -92,7 +94,7 @@ const LoadListProduct = (props: Props) => {
                               <div className="btn-group">
                                 <a
                                   className="btn btn-sm btn-outline-secondary"
-                                  href="/detailProduct"
+                                  href={`/detailProduct/${product.id}`}
                                 >
                                   Xem chi tiết
                                 </a>
