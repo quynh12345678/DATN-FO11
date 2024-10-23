@@ -44,7 +44,7 @@ const OneListProduct = (props: Props) => {
                             <i className="btn bi bi-eye fs-6 "></i>
                           </a>
 
-                          <a href="">
+                          <a href="/giohang">
                             <i className="btn bi bi-cart2"></i>
                           </a>
                         </div>
@@ -60,7 +60,10 @@ const OneListProduct = (props: Props) => {
                       />
                     </a>
                     <div className="card-body">
-                      <a href={`/detailProduct/${product.id}`}>
+                      <a
+                        href={`/detailProduct/${product.id}`}
+                        style={{ textDecoration: "none" }}
+                      >
                         <h5>{product.name}</h5>
                       </a>
                       <h6>MU</h6>

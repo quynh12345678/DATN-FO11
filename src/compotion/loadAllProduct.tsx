@@ -65,7 +65,10 @@ const LoadListProduct = (props: Props) => {
                             />
                           </a>
                           <div className="card-body">
-                            <a href={`/detailProduct/${product.id}`}>
+                            <a
+                              href={`/detailProduct/${product.id}`}
+                              style={{ textDecoration: "none" }}
+                            >
                               <h5>{product.name}</h5>
                             </a>
                             <h6>MU</h6>
