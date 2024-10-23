@@ -32,7 +32,7 @@ const Home = () => {
       <Menu />
       <OneListProduct product={listProduct} setProduct={setlistProduct} />
       <BanerBody />
-      <TwoListProduct />
+      <TwoListProduct product={listProduct} setProduct={setlistProduct} />
       <TopFooter />
     </>
   );
