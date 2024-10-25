@@ -57,7 +57,12 @@ function App() {
         <Route path="/bill" Component={Bill} />
         <Route path="/detailbill" Component={DetailBill} />
         <Route path="/admin" Component={HomeAdmin} />
-        <Route path="/admin/list" Component={Listproduct} />
+        <Route
+          path="/admin/list"
+          element={
+            <Listproduct product={listproduct} setProduct={setlistProduct} />
+          }
+        />
         <Route path="/admin/add" Component={AddProduct} />
         <Route path="/admin/user" Component={ListUser} />
         <Route path="/giohang" Component={Cart} />

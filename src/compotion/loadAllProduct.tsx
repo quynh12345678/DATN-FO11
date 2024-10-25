@@ -57,7 +57,7 @@ const LoadListProduct = (props: Props) => {
                           </div>
                           <a href={`/detailProduct/${product.id}`}>
                             <img
-                              src={product.images}
+                              src={product.img_thumbnail}
                               width="100%"
                               height="350"
                               alt=""
@@ -103,8 +103,8 @@ const LoadListProduct = (props: Props) => {
                                 </a>
                               </div>
                               <small className="text-muted text-right">
-                                <s>${product.price}</s>
-                                <b>${product.price}</b>
+                                <s>${product.price_regular}</s>
+                                <b>${product.price_sale}</b>
                               </small>
                             </div>
                           </div>
