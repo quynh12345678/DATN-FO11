@@ -6,7 +6,7 @@ type Props = {
   setProduct: (data: Product[]) => void;
 };
 const OneListProduct = (props: Props) => {
-  const firstFourProducts = props.product.slice(0, 3);
+  // const firstFourProducts = props.product.slice(0, 3);
   return (
     <>
       <main>
@@ -29,7 +29,8 @@ const OneListProduct = (props: Props) => {
             </div>
           </div>
           <div className="row">
-            {firstFourProducts.map((product: Product) => {
+          {Array.isArray(props.product) &&
+                  props.product.map((product) => {
               return (
                 <div className="col-md-4 position-relative" key={product.id}>
                   <div className="card mb-4 shadow-sm">
@@ -52,7 +53,7 @@ const OneListProduct = (props: Props) => {
                     </div>
                     <a href={`/detailProduct/${product.id}`}>
                       <img
-                        src={product.images}
+                        src={product.img_thumbnail}
                         width="100%"
                         height="350"
                         alt=""
@@ -98,8 +99,8 @@ const OneListProduct = (props: Props) => {
                           </a>
                         </div>
                         <small className="text-muted text-right">
-                          <s>${product.price}</s>
-                          <b>${product.price}</b>
+                          <s>${product.price_sale}</s>
+                          <b>-${product.price_regular}</b>
                         </small>
                       </div>
                     </div>

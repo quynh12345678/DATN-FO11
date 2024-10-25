@@ -39,7 +39,7 @@ export const putProduct = async (id: string, product: ProductLite) => {
 export const deleteProduct = async (id: string) => {
   try {
     const { data } = await axiosIinstance.delete("/api/products/" + id);
-    return data;
+    return data.data;
   } catch (error) {
     console.log(error);
   }
