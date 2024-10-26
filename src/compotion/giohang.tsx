@@ -1,9 +1,12 @@
 import "../assets/css/giohang.css";
 
 import { ToastContainer } from "react-toastify";
+import Header from "./header";
+import Footer from "./footer";
 const Cart = () => {
   return (
     <>
+      <Header />
       <h2 className="text-center">Giỏ Hàng</h2>
       <div className="container">
         <table id="cart" className="table table-hover table-condensed">
@@ -118,6 +121,7 @@ const Cart = () => {
         </table>
       </div>
       <ToastContainer />
+      <Footer />
     </>
   );
 };

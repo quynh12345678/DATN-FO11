@@ -16,6 +16,8 @@ import { Product, ProductLite } from "../interface/product";
 import { useEffect, useState } from "react";
 import { getIdProduct } from "../sevies/product";
 import { useParams } from "react-router-dom";
+import Header from "./header";
+import Footer from "./footer";
 
 type Props = {
   product: Product[];
@@ -26,7 +28,7 @@ const SingleProduct = (props: Props) => {
   const [images, setImage] = useState<string>("");
   const [price, setPrice] = useState<number>(0);
   const [description, setDesc] = useState<string>("");
-  const [message, setMessage] = useState<string>("");
+
   const { id }: any = useParams();
   const firstFourProducts = props.product.slice(0, 4);
   useEffect(() => {
@@ -45,6 +47,7 @@ const SingleProduct = (props: Props) => {
   }, []);
   return (
     <>
+      <Header />
       <main>
         <section className="product-area product-single-area my-5">
           <div className="container">
@@ -82,7 +85,7 @@ const SingleProduct = (props: Props) => {
                                       height: 150,
                                       margin: 20,
                                     }}
-                                    src="src/images/white.jpg"
+                                    src={images}
                                     alt="Image 1"
                                   />
                                   <h1
@@ -102,7 +105,7 @@ const SingleProduct = (props: Props) => {
                                       height: 150,
                                       margin: 20,
                                     }}
-                                    src="src/images/black.jpg"
+                                    src={images}
                                     alt="Image 1"
                                   />
                                   <h1
@@ -123,7 +126,7 @@ const SingleProduct = (props: Props) => {
                                       margin: 20,
                                       color: "blue",
                                     }}
-                                    src="src/images/blue.jpg"
+                                    src={images}
                                     alt="Image 1"
                                   />
                                   <h1
@@ -381,6 +384,7 @@ const SingleProduct = (props: Props) => {
           </div>
         </main>
       </main>
+      <Footer />
     </>
   );
 };

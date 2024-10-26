@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "../../../styles/Website/bill.css";
 import { faCar, faEnvelope, faFileInvoice, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
+import Header from "../../../compotion/header";
+import Footer from "../../../compotion/footer";
 
 const DetailBill = () => {
     const duongDan = [
@@ -13,6 +15,7 @@ const DetailBill = () => {
 
     return (
         <>
+        <Header />
             <Breadcrumb items={duongDan} />
 
             <div className="invoice-container">
@@ -140,6 +143,7 @@ const DetailBill = () => {
                     </table>
                 </div>
             </div>
+            <Footer />
         </>
     );
 };

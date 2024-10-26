@@ -10,7 +10,7 @@ type Props = {
 };
 
 const Listproduct = (props: Props) => {
-  const delProdutc = async (id: string) => {
+  const delProdutc = async (id: string | number) => {
     if (window.confirm("bạn có chắc là muốn xóa sản phẩm này chứ!")) {
       try {
         const deletePro: Product = await deleteProduct(id);
@@ -44,6 +44,7 @@ const Listproduct = (props: Props) => {
                     <th scope="col">giá sản phẩm</th>
                     <th scope="col">ảnh sản phẩm</th>
                     <th scope="col">mô tả sản phẩm </th>
+                    <th scope="col">danh mục sản phẩm </th>
                     <th scope="col">hành động</th>
                   </tr>
                 </thead>
@@ -56,12 +57,13 @@ const Listproduct = (props: Props) => {
                         <td>{product.price_sale}</td>
                         <td>
                           <img
-                            src={product.img_thumbnail}
+                            src={product.images}
                             width={"100px"}
                             height={"80px"}
                           />
                         </td>
                         <td>{product.description}</td>
+                        <td>{product.category}</td>
                         <td>
                           <a
                             href={`/admin/update/${product.id}`}

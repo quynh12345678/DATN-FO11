@@ -3,6 +3,8 @@ import LoadListProduct from "./loadAllProduct";
 import "/src/assets/css/style.css";
 import { Product } from "../interface/product";
 import { getAllProduct } from "../sevies/product";
+import Header from "./header";
+import Footer from "./footer";
 
 const Products = () => {
   const [listProduct, setlistProduct] = useState<Product[]>([]);
@@ -21,7 +23,9 @@ const Products = () => {
   }, []);
   return (
     <>
+      <Header />
       <LoadListProduct product={listProduct} setProduct={setlistProduct} />
+      <Footer />
     </>
   );
 };

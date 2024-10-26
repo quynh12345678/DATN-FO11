@@ -1,13 +1,15 @@
 export interface Product {
   id: string;
   name: string;
-  img_thumbnail: string;
-  price_regular: number;
+  images: string;
+  price: number;
   description: string;
   price_sale: number;
+  category: string;
+  views: string;
 }
 
 export type ProductLite = Pick<
   Product,
-  "name" | "img_thumbnail" | "description" | "price_regular" | "price_sale"
+  "name" | "images" | "description" | "price" | "price_sale"
 >;

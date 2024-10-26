@@ -10,6 +10,8 @@ import TwoListProduct from "./twoListProduct";
 import { useEffect, useState } from "react";
 import { Product } from "../interface/product";
 import { getAllProduct } from "../sevies/product";
+import Header from "./header";
+import Footer from "./footer";
 
 const Home = () => {
   const [listProduct, setlistProduct] = useState<Product[]>([]);
@@ -28,12 +30,14 @@ const Home = () => {
   }, []);
   return (
     <>
+      <Header />
       <Banner />
       <Menu />
       <OneListProduct product={listProduct} setProduct={setlistProduct} />
       <BanerBody />
       <TwoListProduct product={listProduct} setProduct={setlistProduct} />
       <TopFooter />
+      <Footer />
     </>
   );
 };

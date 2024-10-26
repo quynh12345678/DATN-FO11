@@ -20,8 +20,6 @@ import ListUser from "./compotion/admin/listUser";
 import { useEffect, useState } from "react";
 import { Product } from "./interface/product";
 import { getAllProduct } from "./sevies/product";
-import Header from "./compotion/header";
-import Footer from "./compotion/footer";
 import Cart from "./compotion/giohang";
 
 function App() {
@@ -41,7 +39,6 @@ function App() {
   }, []);
   return (
     <>
-      <Header />
       <Routes>
         <Route path="/" Component={Home} />
         <Route path="/products" Component={Products} />
@@ -68,7 +65,6 @@ function App() {
         <Route path="/giohang" Component={Cart} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
     </>
   );
 }
