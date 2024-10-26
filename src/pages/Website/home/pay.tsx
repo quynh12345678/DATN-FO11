@@ -5,6 +5,8 @@ import { Link } from "react-router-dom"
 import Breadcrumb from "../../../compotion/Breadcrumb"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons';
+import Header from "../../../compotion/header"
+import Footer from "../../../compotion/footer"
 
 const Pay = () => {
     const duongDan = [
@@ -15,6 +17,7 @@ const Pay = () => {
 
     return (
         <>
+        <Header />
             <Breadcrumb items={duongDan} />
             <div className="container">
                 <div className="schedule-header payseting">
@@ -135,6 +138,7 @@ const Pay = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

@@ -21,7 +21,7 @@ export const getIdProduct = async (id: number) => {
 export const postProduct = async (product: ProductLite) => {
   try {
     const { data } = await axiosIinstance.post("/api/products", product);
-    return data;
+    return data.data;
   } catch (error) {
     console.log(error);
   }
@@ -36,10 +36,10 @@ export const putProduct = async (id: string, product: ProductLite) => {
   }
 };
 
-export const deleteProduct = async (id: string) => {
+export const deleteProduct = async (id: string | number) => {
   try {
     const { data } = await axiosIinstance.delete("/api/products/" + id);
-    return data.data;
+    return data;
   } catch (error) {
     console.log(error);
   }
